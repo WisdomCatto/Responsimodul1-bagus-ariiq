@@ -56,3 +56,4 @@ di postman coba buka link ini dengan perintah GET
 [GET] http://localhost:3000/api/loans
 
 Link hasil deployment Vercel
+https://responsimodul1-bagus-ariiq-pqxl65u8o.vercel.app/
