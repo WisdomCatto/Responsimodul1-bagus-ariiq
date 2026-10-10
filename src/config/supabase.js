@@ -3,15 +3,18 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseSecretKey = process.env.SUPABASE_SECRET_KEY;
 
+console.log('Supabase environment check:', {
+  hasUrl: Boolean(supabaseUrl),
+  hasSecretKey: Boolean(supabaseSecretKey),
+  nodeEnv: process.env.NODE_ENV
+});
+
 if (!supabaseUrl || !supabaseSecretKey) {
   throw new Error(
     'SUPABASE_URL dan SUPABASE_SECRET_KEY wajib dikonfigurasi.'
   );
 }
 
-const supabase = createClient(
-  supabaseUrl,
-  supabaseSecretKey
-);
+const supabase = createClient(supabaseUrl, supabaseSecretKey);
 
 export default supabase;
